@@ -10,5 +10,4 @@ func main() {
 		fmt.Println("Hello World")
 		time.Sleep(10 * time.Second)
 	}
-	// chore: инициализация проекта с базовой структурой
 }
