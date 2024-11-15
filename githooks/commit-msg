@@ -1,0 +1,15 @@
+#!/bin/bash
+
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+REGEX="^(feat|fix|docs|style|refactor|perf|test|chore|build|ci|revert)(\([a-zA-Z0-9_-]+\))?: .+$"
+
+if [[ ! "$COMMIT_MSG" =~ $REGEX ]]; then
+  echo -e "\033[31mОШИБКА: Сообщение коммита не соответствует формату Conventional Commits.\033[0m"
+  echo -e "Формат: тип(область?): описание"
+  echo -e "Пример: feat(auth): добавлена возможность входа"
+  exit 1
+fi
+
+exit 0

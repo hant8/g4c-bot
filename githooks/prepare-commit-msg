@@ -1,0 +1,10 @@
+#!/bin/bash
+
+COMMIT_MSG_FILE=$1
+
+if ! git rev-parse --verify HEAD >/dev/null 2>&1; then
+  echo -e "type(scope?): description\n\n" > "$COMMIT_MSG_FILE"
+  exit 0
+fi
+
+echo -e "type(scope?): description\n\n" > "$COMMIT_MSG_FILE"
