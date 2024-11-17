@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"go-example/pkg/tcp"
+	"go-example/pkg/udp"
 )
 
 func main() {
@@ -14,10 +14,10 @@ func main() {
 	switch *mode {
 	case "server":
 		fmt.Println("Запуск UDP-сервера...")
-		tcp.StartServer(*port)
+		udp.StartServer(*port)
 	case "client":
 		fmt.Println("Запуск UDP-клиента...")
-		tcp.StartClient(*port)
+		udp.StartClient(*port)
 	default:
 		fmt.Println("Неизвестный режим. Используйте 'server' или 'client'.")
 	}
